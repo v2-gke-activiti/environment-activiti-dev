@@ -1,0 +1,78 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+<<<<<<< Updated upstream
+=======
+bootConfigURL: https://github.com/appian-serverless/jenkins-x-boot-config
+>>>>>>> Stashed changes
+cluster:
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: gke
+environments:
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
+ingress:
+  domain: ""
+  externalDNS: false
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
+kaniko: true
+repository: nexus
+secretStorage: local
+storage:
+  backup:
+    enabled: false
+    url: ""
+  logs:
+    enabled: false
+    url: ""
+  reports:
+    enabled: false
+    url: ""
+  repository:
+    enabled: false
+    url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
+versionStream:
+<<<<<<< Updated upstream
+  ref: 552678aadcd3036a51f72c0e8732695dff259ffe
+=======
+  ref: master
+>>>>>>> Stashed changes
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: lighthouse
