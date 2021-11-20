@@ -18,8 +18,11 @@ webhooks:
 
 image:
   # Deprecated in favor of image.parentRepository but retained for backwards compatibility with old value.
-  repository: gcr.io/jenkinsxio/lighthouse
-  parentRepository: gcr.io/jenkinsxio
+  repository: ghcr.io/jenkins-x/lighthouse
+  parentRepository: ghcr.io/jenkins-x
+
+env:
+  JX_DEFAULT_IMAGE: ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
 
 # Deprecated in favor of webhooks.replicaCount and webhooks.service
 replicaCount: 2

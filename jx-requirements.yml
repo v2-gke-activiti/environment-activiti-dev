@@ -16,7 +16,7 @@ cluster:
   registry: 875246367037.dkr.ecr.us-west-2.amazonaws.com
 environments:
 - ingress:
-    domain: 54.191.30.199.nip.io
+    domain: 52.27.79.164.nip.io
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
@@ -47,7 +47,7 @@ environments:
   repository: environment-activiti-production
 gitops: true
 ingress:
-  domain: 54.191.30.199.nip.io
+  domain: 52.27.79.164.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:

@@ -3,3 +3,15 @@ enabled: true
   {{- else }}
 enabled: false
   {{- end }}
+
+image:
+  parentRepository: ghcr.io/jenkins-x
+  tag: 0.0.164
+
+jxcontroller:
+  image:
+    repository: ghcr.io/jenkins-x/lighthouse-jx-controller
+    tag: 0.0.164
+
+env:
+  JX_DEFAULT_IMAGE: ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3

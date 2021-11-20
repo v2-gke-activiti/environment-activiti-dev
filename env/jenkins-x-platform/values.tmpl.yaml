@@ -4,12 +4,16 @@ dockerRegistry: "{{ .Requirements.cluster.registry }}"
 
 
 expose:
-  enabled: false
+  Image: ghcr.io/jenkins-x/exposecontroller
+  ImageTag: 2.3.118
+  enabled: true
 
 JXBasicAuth: "{{ .Parameters.adminUser.username }}:{SHA}{{ .Parameters.adminUser.password | toString | hashPassword }}"
 
 cleanup:
-  enabled: false
+  Image: ghcr.io/jenkins-x/exposecontroller
+  ImageTag: 2.3.118
+  enabled: true
 
 chartmuseum:
 {{- if and (hasKey .Requirements "repository") (eq .Requirements.repository "bucketrepo") }}
@@ -184,10 +188,20 @@ controllerbuild:
 {{- if hasKey .Requirements.cluster "strictPermissions" }}
 {{- if and (eq .Requirements.cluster.provider "openshift") (.Requirements.cluster.strictPermissions) }}
 gcpreviews:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   clusterrole:
     enabled: false
 
 postinstalljob:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   clusterrole:
     enabled: false
 
@@ -196,6 +210,11 @@ controllerworkflow:
     enabled: false
 
 controllerbuild:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   clusterrole:
     enabled: false
 
@@ -204,6 +223,11 @@ controllercommitstatus:
     enabled: false
 
 controllerrole:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   role:
     additionalNamespaces:
     - jx-staging
@@ -223,6 +247,11 @@ heapster:
 {{- end }}
 
 gcactivities:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   args:
     - "gc"
     - "activities"
@@ -239,6 +268,11 @@ gcactivities:
 {{- end }}
 
 gcpods:
+  image:
+    repository: ghcr.io/jenkins-x/builder-jx
+    tag: 2.1.155-778-patch3
+  env:
+    BUILDER_JX_IMAGE: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
   cronjob:
     enabled: true
     schedule: "0/30 * * * *"

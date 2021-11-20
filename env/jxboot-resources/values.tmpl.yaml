@@ -141,11 +141,11 @@ jenkins-x-platform:
         Go:
           Containers:
             Go:
-              Image: jenkinsxio/builder-go:latest
+              Image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3
         Maven:
           Containers:
             Maven:
-              Image: jenkinsxio/builder-maven:latest
+              Image: ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
           volumes:
           - mountPath: /root/.m2/
             secretName: jenkins-maven-settings
@@ -156,7 +156,7 @@ jenkins-x-platform:
         Nodejs:
           Containers:
             Nodejs:
-              Image: jenkinsxio/builder-nodejs:latest
+              Image: ghcr.io/jenkins-x/builder-nodejs:2.1.155-778-patch3
   monocular:
     api:
       livenessProbe:
@@ -221,4 +221,4 @@ autoUpdate:
 {{- end }}
 
 versions:
-  builders: {{ versionStream "docker" "gcr.io/jenkinsxio/builder-go" }}
+  builders: {{ versionStream "docker" "ghcr.io/jenkins-x/builder-go" }}
