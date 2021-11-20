@@ -1,0 +1,10 @@
+adminUser:
+  password: local:activiti/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: serverlessbot726@gmail.com
+  token: local:activiti/pipelineUser:token
+  username: serverless-bot-726
+prow:
+  hmacToken: local:activiti/prow:hmacToken

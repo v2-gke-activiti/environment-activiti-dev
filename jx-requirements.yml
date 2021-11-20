@@ -1,26 +1,30 @@
 autoUpdate:
   enabled: false
   schedule: ""
-<<<<<<< Updated upstream
-=======
 bootConfigURL: https://github.com/appian-serverless/jenkins-x-boot-config
->>>>>>> Stashed changes
 cluster:
+  clusterName: activiti
+  devEnvApprovers:
+  - serverless-bot-726
+  environmentGitOwner: eks-jx-v2
   gitKind: github
   gitName: github
   gitServer: https://github.com
   namespace: jx
-  provider: gke
+  provider: eks
+  region: us-west-2
+  registry: 875246367037.dkr.ecr.us-west-2.amazonaws.com
 environments:
 - ingress:
-    domain: ""
+    domain: 54.191.30.199.nip.io
     externalDNS: false
-    namespaceSubDomain: ""
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
   key: dev
+  repository: environment-activiti-dev
 - ingress:
     domain: ""
     externalDNS: false
@@ -30,6 +34,7 @@ environments:
       enabled: false
       production: false
   key: staging
+  repository: environment-activiti-staging
 - ingress:
     domain: ""
     externalDNS: false
@@ -39,9 +44,10 @@ environments:
       enabled: false
       production: false
   key: production
+  repository: environment-activiti-production
 gitops: true
 ingress:
-  domain: ""
+  domain: 54.191.30.199.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
@@ -69,10 +75,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-<<<<<<< Updated upstream
-  ref: 552678aadcd3036a51f72c0e8732695dff259ffe
-=======
   ref: master
->>>>>>> Stashed changes
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
