@@ -95,7 +95,7 @@ https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages
         production: false
     kaniko: true
     repository: nexus
-    secretStorage: local
+    secretStorage: vault
     storage:
       backup:
         enabled: false

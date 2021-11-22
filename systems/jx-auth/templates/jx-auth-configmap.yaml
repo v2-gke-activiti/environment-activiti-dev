@@ -1,1 +1,23 @@
 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jx-auth-config
+  labels:
+    jenkins.io/created-by: jx
+    jenkins.io/config-type: auth
+data:
+  gitAuth.yaml: |
+    currentserver: "https://github.com"
+    defaultusername: "serverless-bot-726"
+    pipelineserver: "https://github.com"
+    pipelineusername: "serverless-bot-726"
+    servers:
+    - currentuser: "serverless-bot-726"
+      kind: "github"
+      name: "github"
+      url: "https://github.com"
+      users:
+      - apitoken: "vault:activiti-cloud/pipelineUser:token"
+        bearertoken: ""
+        username: "serverless-bot-726"
