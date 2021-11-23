@@ -1,18 +1,18 @@
 autoUpdate:
   enabled: false
   schedule: ""
-bootConfigURL: https://github.com/appian-serverless/jenkins-x-boot-config
+bootConfigURL: https://github.com/v2-gke-activiti/environment-activiti-dev
 cluster:
   clusterName: activiti-cloud
   devEnvApprovers:
   - serverless-bot-726
-  environmentGitOwner: eks-jx-v2
+  environmentGitOwner: v2-gke-activiti
   gitKind: github
   gitName: github
   gitServer: https://github.com
   namespace: jx
-  provider: eks
-  region: us-west-2
+  provider: gke
+  region: us-west1-a
   registry: 875246367037.dkr.ecr.us-west-2.amazonaws.com
 environments:
 - ingress:
